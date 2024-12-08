@@ -11,7 +11,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 #COPY ["WebApplicationProducer/WebApplicationProducer.csproj", "WebApplicationProducer/"]
 COPY ["WebApplicationProducer.csproj", "./"]
-RUN dotnet restore "./WebApplicationProducer/WebApplicationProducer.csproj"
+RUN dotnet restore "./WebApplicationProducer.csproj"
 COPY . .
 WORKDIR "/src/WebApplicationProducer"
 RUN dotnet build "./WebApplicationProducer.csproj" -c $BUILD_CONFIGURATION -o /app/build
