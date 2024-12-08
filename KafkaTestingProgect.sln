@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "KafkaTestingProgect", "KafkaTestingProgect\KafkaTestingProgect.shproj", "{3075676A-DE67-466A-B59A-B62E329BCFA2}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11C46E94-5E1D-4948-BD59-35859AAEA113}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		KafkaTestingProgect\KafkaTestingProgect.projitems*{3075676a-de67-466a-b59a-b62e329bcfa2}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal
