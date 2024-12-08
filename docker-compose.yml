@@ -14,5 +14,5 @@ services:
       context: .
       dockerfile: WebApplicationProducer/Dockerfile
     ports:
-      - "8082:8082"
+      - "8082:8080"
     restart: always
