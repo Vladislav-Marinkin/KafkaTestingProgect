@@ -9,8 +9,8 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["WebApplicationProducer/WebApplicationProducer.csproj", "WebApplicationProducer/"]
-#COPY ["WebApplicationProducer.csproj", "./"]
+#COPY ["WebApplicationProducer/WebApplicationProducer.csproj", "WebApplicationProducer/"]
+COPY ["WebApplicationProducer.csproj", "./"]
 RUN dotnet restore "./WebApplicationProducer.csproj"
 COPY . .
 WORKDIR "/src/WebApplicationProducer"
