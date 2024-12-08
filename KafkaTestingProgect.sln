@@ -5,7 +5,37 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "KafkaTestingProgect", "KafkaTestingProgect\KafkaTestingProgect.shproj", "{3075676A-DE67-466A-B59A-B62E329BCFA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationProducer", "WebApplicationProducer\WebApplicationProducer.csproj", "{14DD5B82-1F2C-4F01-A56B-87336F2160A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8579C16B-74E7-4F35-82D1-DEBAA808E74F} = {8579C16B-74E7-4F35-82D1-DEBAA808E74F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationConsumer", "WebApplicationConsumer\WebApplicationConsumer.csproj", "{21350C87-CB72-409D-B49B-64D522A08EA8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8579C16B-74E7-4F35-82D1-DEBAA808E74F} = {8579C16B-74E7-4F35-82D1-DEBAA808E74F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{8579C16B-74E7-4F35-82D1-DEBAA808E74F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14DD5B82-1F2C-4F01-A56B-87336F2160A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DD5B82-1F2C-4F01-A56B-87336F2160A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DD5B82-1F2C-4F01-A56B-87336F2160A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DD5B82-1F2C-4F01-A56B-87336F2160A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21350C87-CB72-409D-B49B-64D522A08EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21350C87-CB72-409D-B49B-64D522A08EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21350C87-CB72-409D-B49B-64D522A08EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21350C87-CB72-409D-B49B-64D522A08EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8579C16B-74E7-4F35-82D1-DEBAA808E74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8579C16B-74E7-4F35-82D1-DEBAA808E74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8579C16B-74E7-4F35-82D1-DEBAA808E74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8579C16B-74E7-4F35-82D1-DEBAA808E74F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
