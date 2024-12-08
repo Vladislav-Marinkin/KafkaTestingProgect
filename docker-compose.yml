@@ -6,13 +6,13 @@ services:
       context: .
       dockerfile: WebApplicationConsumer/Dockerfile
     ports:
-      - "8080:8080"
-      - "8081:8081"
+      - "8082:80"
+    restart: always
 
   producer:
     build:
       context: .
       dockerfile: WebApplicationProducer/Dockerfile
     ports:
-      - "8082:8080"
-      - "8083:8081"
+      - "8083:80"
+    restart: always
