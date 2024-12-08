@@ -8,6 +8,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+
 COPY ["WebApplicationProducer/WebApplicationProducer.csproj", "WebApplicationProducer/"]
 RUN dotnet restore "./WebApplicationProducer/WebApplicationProducer.csproj"
 COPY . .
