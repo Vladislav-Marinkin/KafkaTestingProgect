@@ -14,7 +14,8 @@ builder.Services.AddSingleton(provider =>
 {
     var kafkaBootstrapServers = builder.Configuration["Kafka:BootstrapServers"];
     var kafkaTopic = builder.Configuration["Kafka:Topic"];
-    return new KafkaProducer(kafkaBootstrapServers, kafkaTopic);
+    var logger = provider.GetRequiredService<ILogger<KafkaProducer>>();
+    return new KafkaProducer(kafkaBootstrapServers, kafkaTopic, logger);
 });
 
 // Регистрация MessageGenerator
