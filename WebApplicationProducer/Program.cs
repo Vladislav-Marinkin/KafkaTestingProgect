@@ -23,10 +23,14 @@ builder.Services.AddSingleton<MessageGenerator>();
 
 var app = builder.Build();
 
+// Создание топика
+var topicManager = app.Services.GetRequiredService<KafkaTopicManager>();
+await topicManager.CreateTopicAsync(builder.Configuration["Kafka:Topic"], numPartitions: 3, replicationFactor: 1);
+
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
-    app.UseSwagger();
+app.UseSwagger();
     app.UseSwaggerUI();
 //}
 
