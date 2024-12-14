@@ -7,12 +7,12 @@ services:
       dockerfile: WebApplicationConsumer/Dockerfile
     restart: always
     deploy:
-      replicas: 10
+      replicas: 5
 
   producer:
     build:
       context: .
       dockerfile: WebApplicationProducer/Dockerfile
     ports:
-      - "8085:8080"
+      - "8082:8080"
     restart: always
