@@ -1,3 +1,4 @@
+using System;
 using WebApplicationProducer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +13,10 @@ builder.Services.AddSwaggerGen();
 // Конфигурация KafkaProducer
 builder.Services.AddSingleton(provider =>
 {
-    var kafkaBootstrapServers = builder.Configuration["Kafka:BootstrapServers"];
+    var environment = builder.Environment;
+    var kafkaBootstrapServers = environment.IsDevelopment()
+        ? builder.Configuration["Kafka:BootstrapServers"]
+        : builder.Configuration["Kafka:BootstrapServersProd"];
     var kafkaTopic = builder.Configuration["Kafka:Topic"];
     var logger = provider.GetRequiredService<ILogger<KafkaProducer>>();
     return new KafkaProducer(kafkaBootstrapServers, kafkaTopic, logger);
