@@ -12,12 +12,17 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton(provider =>
 {
     var environment = builder.Environment;
+
     var kafkaBootstrapServers = environment.IsDevelopment()
         ? builder.Configuration["Kafka:BootstrapServers"]
         : builder.Configuration["Kafka:BootstrapServersProd"];
+
+    var clickhouseConnectionString = environment.IsDevelopment()
+        ? builder.Configuration["ClickHouse:ConnectionString"]
+        : builder.Configuration["ClickHouse:ConnectionStringProd"];
+
     var kafkaTopic = builder.Configuration["Kafka:Topic"];
     var kafkaGroupId = builder.Configuration["Kafka:GroupId"];
-    var clickhouseConnectionString = builder.Configuration["ClickHouse:ConnectionString"];
     return new KafkaConsumer(kafkaBootstrapServers, kafkaGroupId, kafkaTopic, clickhouseConnectionString);
 });
 
