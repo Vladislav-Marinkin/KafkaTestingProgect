@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 // Конфигурация KafkaProducer
 builder.Services.AddSingleton(provider =>
 {
-    var kafkaBootstrapServers = builder.Configuration["Kafka:BootstrapServersProd"];
+    var kafkaBootstrapServers = builder.Configuration["Kafka:BootstrapServers"];
     var kafkaTopic = builder.Configuration["Kafka:Topic"];
     var logger = provider.GetRequiredService<ILogger<KafkaProducer>>();
     return new KafkaProducer(kafkaBootstrapServers, kafkaTopic, logger);
@@ -36,12 +36,8 @@ var app = builder.Build();
 var topicManager = app.Services.GetRequiredService<KafkaTopicManager>();
 await topicManager.CreateTopicAsync(builder.Configuration["Kafka:Topic"], numPartitions:10, replicationFactor: 1);
 
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
 app.UseSwagger();
-    app.UseSwaggerUI();
-//}
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
